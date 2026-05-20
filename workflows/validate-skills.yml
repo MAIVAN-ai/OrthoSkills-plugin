@@ -1,0 +1,114 @@
+name: validate-skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install validator dependencies
+        run: pip install pyyaml
+
+      - name: Validate marketplace and plugin manifests
+        run: |
+          python - <<'PY'
+          import json, pathlib, sys
+          errors = []
+
+          mp = pathlib.Path(".claude-plugin/marketplace.json")
+          if not mp.exists():
+              errors.append(f"Missing {mp}")
+          else:
+              try:
+                  mp_data = json.loads(mp.read_text(encoding="utf-8"))
+              except json.JSONDecodeError as e:
+                  errors.append(f"{mp}: invalid JSON — {e}")
+                  mp_data = None
+              if mp_data is not None:
+                  for required in ("name", "plugins"):
+                      if required not in mp_data:
+                          errors.append(f"{mp}: missing '{required}'")
+                  for plugin in mp_data.get("plugins", []):
+                      source = plugin.get("source", "").lstrip("./")
+                      manifest = pathlib.Path(source) / ".claude-plugin" / "plugin.json"
+                      if not manifest.exists():
+                          errors.append(f"Plugin '{plugin.get('name')}' missing manifest at {manifest}")
+                      else:
+                          try:
+                              json.loads(manifest.read_text(encoding="utf-8"))
+                          except json.JSONDecodeError as e:
+                              errors.append(f"{manifest}: invalid JSON — {e}")
+
+          if errors:
+              print("Manifest validation failed:")
+              for e in errors:
+                  print(f"  - {e}")
+              sys.exit(1)
+          print("Manifests OK.")
+          PY
+
+      - name: Validate every SKILL.md
+        run: |
+          python - <<'PY'
+          import pathlib, sys, re
+          import yaml
+
+          errors = []
+          skill_files = list(pathlib.Path(".").rglob("SKILL.md"))
+          # Skip anything under hidden / vendor dirs if any appear in future
+          skill_files = [f for f in skill_files if not any(p.startswith(".") for p in f.parts[:-1] if p not in (".",))]
+
+          if not skill_files:
+              errors.append("No SKILL.md files found")
+
+          for f in sorted(skill_files):
+              text = f.read_text(encoding="utf-8")
+              m = re.match(r"^---\n(.*?)\n---\n", text, re.DOTALL)
+              if not m:
+                  errors.append(f"{f}: missing YAML frontmatter")
+                  continue
+              try:
+                  meta = yaml.safe_load(m.group(1))
+              except yaml.YAMLError as e:
+                  errors.append(f"{f}: invalid YAML — {e}")
+                  continue
+              if not isinstance(meta, dict):
+                  errors.append(f"{f}: frontmatter is not a mapping")
+                  continue
+              if "name" not in meta:
+                  errors.append(f"{f}: missing 'name' field")
+              if "description" not in meta:
+                  errors.append(f"{f}: missing 'description' field")
+              elif len(meta["description"]) < 30:
+                  errors.append(f"{f}: 'description' is too short (must be at least 30 chars)")
+
+              lowered = text.lower()
+              if not any(phrase in lowered for phrase in [
+                  "not medical advice",
+                  "not a substitute for clinical",
+                  "surgeon decision required",
+                  "educational reference",
+                  "human-in-the-loop",
+              ]):
+                  errors.append(f"{f}: missing clinical safety disclaimer")
+
+          if errors:
+              print("Validation failed:")
+              for e in errors:
+                  print(f"  - {e}")
+              sys.exit(1)
+
+          print(f"All {len(skill_files)} SKILL.md files validated successfully.")
+          PY
