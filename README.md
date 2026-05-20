@@ -1,4 +1,4 @@
-# OrthoSkills — Cowork Plugin
+# OrthoSkills — Claude Cowork Plugin
 
 **Open-source orthopaedic clinical reasoning skills for Claude — packaged as a Cowork plugin.**
 
