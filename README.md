@@ -1,4 +1,4 @@
-# Ortho-Skills — Cowork Plugin Marketplace
+# OrthoSkills — Cowork Plugin
 
 **Open-source orthopaedic clinical reasoning skills for Claude — packaged as a Cowork plugin.**
 
@@ -138,7 +138,7 @@ Pull requests are welcome from orthopaedic surgeons, registrars, residents, AI e
 
 ## License
 
-Apache License 2.0 — see [LICENSE](LICENSE).
+GNU Affero General Public License v3.0 — see [LICENSE](LICENSE).
 
 The AO/OTA Fracture & Dislocation Classification Compendium 2018 is © AO Foundation. This repository **does not reproduce the Compendium**; it describes the *reasoning workflow* a surgeon or AI agent would follow when applying any classification system to a case. Always consult the official AO Foundation publications for authoritative classification text.
 
@@ -146,8 +146,8 @@ The AO/OTA Fracture & Dislocation Classification Compendium 2018 is © AO Founda
 
 ## Maintainers
 
-- [MAIVAN.ai](https://maivan.ai) / ORTHO-X — Thomas, Kilchberg, Zurich
-- Contact: via GitHub issues on this repo
+- [MAIVAN.ai](https://maivan.ai) / ORTHO-X — MAIVAN.ai PBC by Bluenaut Matching Services AG, CH-8802 Kilchberg Zurich, Switzerland
+- Contact: coordinator@maivan.ai
 
 ---
 
