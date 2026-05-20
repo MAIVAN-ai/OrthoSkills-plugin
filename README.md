@@ -2,7 +2,7 @@
 
 **Open-source orthopaedic clinical reasoning skills for Claude — packaged as a Cowork plugin.**
 
-This repository is a [Cowork plugin marketplace](https://docs.claude.com) hosting the **`orthoskills`** plugin: a complete, bundled set of 12 Anthropic-style "skills" covering the orthopaedic surgical workflow — from diagnosis and AO/OTA fracture classification through treatment mapping, implant selection, outcome measurement, and aftercare.
+This repository is a [Cowork plugin marketplace](https://docs.claude.com) hosting the **`OrthoSkills`** plugin: a complete, bundled set of 12 Anthropic-style "skills" covering the orthopaedic surgical workflow — from diagnosis and AO/OTA fracture classification through treatment mapping, implant selection, outcome measurement, and aftercare.
 
 > 🩺 **Educational reference only.** These skills do not provide medical advice. Every clinical decision must be made by a qualified surgeon with the patient in front of them. Skills emphasise human-in-the-loop confirmation at every step.
 
