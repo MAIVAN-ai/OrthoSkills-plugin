@@ -14,7 +14,7 @@ In Cowork (or any Claude client that supports the plugin marketplace format):
 
 1. Add this repository as a marketplace source:
    ```
-   /plugin marketplace add MAIVAN-ai/Ortho-Skills
+   /plugin marketplace add MAIVAN-ai/OrthoSkills-plugin
    ```
 2. Install the plugin:
    ```
