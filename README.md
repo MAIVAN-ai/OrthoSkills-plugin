@@ -5,6 +5,18 @@
 This repository is a [Cowork plugin marketplace](https://docs.claude.com) hosting the **`OrthoSkills`** plugin: a complete, bundled set of 12 Anthropic-style "skills" covering the orthopaedic surgical workflow — from diagnosis and AO/OTA fracture classification through treatment mapping, implant selection, outcome measurement, and aftercare.
 
 > 🩺 **Educational reference only.** These skills do not provide medical advice. Every clinical decision must be made by a qualified surgeon with the patient in front of them. Skills emphasise human-in-the-loop confirmation at every step.
+>
+> **No Data Rights Granted**
+
+This repository license grants rights only to software, documentation,
+schemas, and skill definitions. It grants no rights to collect, export,
+sell, transfer, train on, or otherwise monetize patient case data,
+clinical images, surgical videos, hospital records, registry data,
+or derived clinical evidence.
+
+Any use of case data requires a separate data-processing agreement,
+patient consent basis where applicable, hospital authorization,
+and, for ORTHO-X Data Commons participation, an ODCC data contribution agreement.
 
 ---
 
