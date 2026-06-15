@@ -152,6 +152,21 @@ GNU Affero General Public License v3.0 — see [LICENSE](LICENSE).
 
 The AO/OTA Fracture & Dislocation Classification Compendium 2018 is © AO Foundation. This repository **does not reproduce the Compendium**; it describes the *reasoning workflow* a surgeon or AI agent would follow when applying any classification system to a case. Always consult the official AO Foundation publications for authoritative classification text.
 
+                       **NOTICE**
+
+**No Data Rights Granted**
+
+This repository license grants rights only to software, documentation,
+schemas, and skill definitions. It grants no rights to collect, export,
+sell, transfer, train on, or otherwise monetize patient case data,
+clinical images, surgical videos, hospital records, registry data,
+or derived clinical evidence.
+
+Any use of case data requires a separate data-processing agreement,
+patient consent basis where applicable, hospital authorization,
+and, for ORTHO-X Data Commons participation, an ODCC data contribution agreement.
+
+
 ---
 
 ## Maintainers
