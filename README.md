@@ -10,6 +10,14 @@ This repository is a [Cowork plugin marketplace](https://docs.claude.com) hostin
 
 ## Install
 
+To install:
+
+- In Claude Cowork, click Customize > Browse plugins > Personal > + > Add marketplace from GitHub
+
+- Enter MAIVAN-ai/OrthoSkills-plugin and click Sync
+
+- Click Install on the Orthoskills card
+
 In Cowork (or any Claude client that supports the plugin marketplace format):
 
 1. Add this repository as a marketplace source:
