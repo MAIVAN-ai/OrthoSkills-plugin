@@ -110,7 +110,7 @@ OrthoSkills/
 │       ├── 11-aftercare-rehab/SKILL.md
 │       └── 12-case-report-publishing/SKILL.md
 ├── .github/workflows/validate-skills.yml      ← CI: YAML frontmatter + safety disclaimer linter
-├── LICENSE                       ← Apache-2.0
+├── LICENSE                       ← AGPL-3.0
 ├── CONTRIBUTING.md
 ├── CODE_OF_CONDUCT.md
 └── README.md                     ← you are here
