@@ -12,7 +12,6 @@ The canonical deep example is `orthoskills/skills/04-aoota-classification/refere
 
 Particularly wanted (in rough priority order):
 - Distal radius (AO/OTA 23) — high case volume, well-studied
-- Tibial plateau (AO/OTA 41) — Schatzker companion already exists as a stub
 - Proximal humerus (AO/OTA 11) — Neer system companion needed
 - Ankle (AO/OTA 44) — Lauge-Hansen + Weber classification
 - Distal femur (AO/OTA 33)
@@ -21,7 +20,6 @@ Particularly wanted (in rough priority order):
 ### 2. Add region-specific classification systems
 
 `orthoskills/skills/05-region-classifications/references/` is where complementary systems live. The Garden + Pauwels combination for proximal femur is the canonical example. Wanted:
-- Schatzker (tibial plateau)
 - Neer (proximal humerus)
 - Mason (radial head)
 - Lauge-Hansen + Weber (ankle)

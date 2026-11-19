@@ -42,7 +42,7 @@ For each candidate, check:
 |---|---|
 | Image-quality consistency | Does the confidence reflect the image quality caveats from skill 02? If a true lateral is missing and the differential depends on the lateral, the primary's confidence should be tempered. |
 | Pattern-recognition consistency | If the same VLM produced this and is known to overconfide on certain patterns (e.g. confusing valgus-impacted neck with non-displaced), is the confidence inflated? |
-| Cross-system consistency | Does the AO/OTA code agree with the region-specific system? Disagreement is a yellow flag. |
+| Cross-system agreement | Do the AO/OTA code and the region-specific system describe the same anatomy? A mismatch is a prompt to compare each system's own definition against the images; it is not, by itself, evidence that either code is wrong. Adjust a code's confidence only if that comparison shows its own definition fits the images poorly. |
 | Clinical-context consistency | Does the classification fit the mechanism? A high-energy injury producing only a "simple A1" pattern is unusual — surface this. |
 
 ### Step 3 — Decide on the differential-handling response
@@ -53,7 +53,7 @@ For each candidate, check:
 | Primary confidence 0.6–0.85, **or** any differential ≥ 0.15 mapping to a **different treatment pathway** | Surface explicitly. Recommend either additional imaging (true lateral, CT) or peer review. Do not yet proceed to treatment mapping with full confidence. |
 | Primary confidence < 0.6 | **Recommend peer review or senior input.** State the open differentials. Do not proceed to treatment mapping. |
 | Image quality `inadequate` from skill 02 | **Refuse to classify.** Send back to skill 02 for re-imaging. |
-| AO/OTA and region-specific systems disagree | Surface the disagreement explicitly. Ask which is more likely given the case context. |
+| AO/OTA and region-specific systems disagree | Surface the disagreement explicitly. Compare each system's own definition against the images and record the result. **Keep both outputs**: do not pick a winner or edit one code to match the other. If the anatomical disagreement remains unresolved, escalate for surgeon review (`request_peer_review`) and carry both codes forward with the disagreement stated. |
 
 ### Step 4 — State what would resolve the uncertainty
 
@@ -83,7 +83,7 @@ differential_summary:
   primary: { code: "31-A2", confidence: 0.74 }
   meaningful_differentials:
     - { code: "31-A3", confidence: 0.16, treatment_implication: "different — DHS typically avoided" }
-  consistency_flags: []
+  consistency_flags: []   # unresolved cross-system discordances for surgeon review; both codes are kept
   image_quality_caveats:
     - "True lateral hip view missing"
 recommendation:

@@ -27,7 +27,7 @@ A complete reasoning chain along the surgical workflow:
 | 11 | [Aftercare & Rehab](skills/11-aftercare-rehab/SKILL.md) | Weight-bearing progression, physio milestones, red flags |
 | 12 | [Case Report Publishing](skills/12-case-report-publishing/SKILL.md) | Structured export (JBJS, OrthoWiki, registry) |
 
-**Canonical deep skill:** `04-aoota-classification` includes a full reference for the **proximal femur** (AO/OTA segment 31). Other anatomical regions are present as stub references for the community to expand.
+**Canonical deep skill:** `04-aoota-classification` includes a full reference for the **proximal femur** (AO/OTA segment 31) and, as a draft pending surgeon review, the **tibial plateau** (AO/OTA segment 41) with its Schatzker / column-concept companion in `05-region-classifications`. Other anatomical regions are present as stub references for the community to expand.
 
 ---
 
@@ -69,6 +69,7 @@ orthoskills/
     │   ├── SKILL.md
     │   └── references/
     │       ├── proximal-femur-31.md       ← canonical, deep
+    │       ├── tibial-plateau-41.md       ← deep (tibial plateau)
     │       ├── humerus-stubs.md
     │       ├── forearm-stubs.md
     │       ├── femur-shaft-distal-stubs.md
@@ -78,6 +79,7 @@ orthoskills/
     │   ├── SKILL.md
     │   └── references/
     │       ├── garden-pauwels.md          ← canonical companion to proximal femur
+    │       ├── schatzker-luo.md           ← companion to tibial plateau
     │       └── other-systems-stubs.md
     ├── 06-differential-reasoning/SKILL.md
     ├── 07-treatment-mapping/SKILL.md

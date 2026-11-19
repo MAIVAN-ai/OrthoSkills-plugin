@@ -1,7 +1,7 @@
 {
   "name": "orthoskills",
-  "version": "0.1.1",
-  "description": "All 12 Ortho-Skills bundled into one plugin: case intake → image quality check → anatomy routing → AO/OTA classification → region-specific classifications (Garden, Pauwels, Schatzker, Neer, Mason, etc.) → differential reasoning → treatment mapping → implant selection → evidence retrieval → outcome measurement → aftercare & rehab → case report publishing. Canonical deep reference for proximal femur (AO/OTA 31); stubs for other regions ready for community expansion. Educational reference only; not medical advice; surgeon decision required.",
+  "version": "0.2.0",
+  "description": "All 12 Ortho-Skills bundled into one plugin: case intake → image quality check → anatomy routing → AO/OTA classification → region-specific classifications (Garden, Pauwels, Schatzker, Neer, Mason, etc.) → differential reasoning → treatment mapping → implant selection → evidence retrieval → outcome measurement → aftercare & rehab → case report publishing. Deep references for proximal femur (AO/OTA 31) and tibial plateau (AO/OTA 41 + Schatzker / column concepts); stubs for other regions ready for community expansion. Educational reference only; not medical advice; surgeon decision required.",
   "author": {
     "name": "MAIVAN.ai / Ortho-Skills contributors",
     "url": "https://github.com/MAIVAN-ai/Ortho-Skills"
@@ -18,6 +18,7 @@
     "garden",
     "pauwels",
     "schatzker",
+    "tibial-plateau",
     "neer",
     "surgical-workflow",
     "medical-ai",
