@@ -55,7 +55,7 @@ The final case record carries both:
 - AO/OTA code (from skill 04)
 - Region-specific classification(s) (from this skill)
 
-These should be **internally consistent**. If they contradict each other, surface the contradiction explicitly — it usually means one of them is wrong, or the case sits on a boundary.
+Record each system **independently**, from its own definition. If the codes imply different anatomy, treat the mismatch as a prompt, not as evidence that either code is wrong: compare each system's own definition against the images, record what you found, and **keep both outputs**. Never change one code to make it agree with the other. If the anatomical disagreement remains unresolved, set `consistent: false` with the reason and escalate it for surgeon review (skill 06).
 
 ### Step 4 — Hand off
 
@@ -150,7 +150,7 @@ consistency_with_ao_ota:
 
 - **Apply systems that fit the anatomy.** Don't apply Schatzker to a humerus.
 - **Surgeon confirmation required.** Same rule as skill 04.
-- **Internal consistency matters.** If Garden says one thing and AO/OTA says another, surface it.
+- **Surface discordance; don't resolve it by fiat.** If Garden says one thing and AO/OTA says another, re-check each against its own definition, keep both outputs, and escalate unresolved anatomical disagreement for surgeon review. A mismatch alone is not evidence that either code is wrong.
 - **Some systems require views or modalities that may not be present.** Sanders, for example, requires CT. If the imaging is inadequate for the system, say so and don't fake a grade.
 - **Not medical advice.**
 
