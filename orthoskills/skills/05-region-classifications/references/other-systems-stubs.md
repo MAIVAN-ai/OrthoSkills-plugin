@@ -51,7 +51,7 @@
 
 ## Schatzker (tibial plateau)
 
-✅ **Expanded.** See `schatzker-luo.md` for the original Schatzker types, the 2018 CT-based revision, Luo's three-column concept and its updates, Moore's fracture-dislocation types, the ten-segment map, consistency rules with AO/OTA 41, reliability data and confidence ceilings.
+✅ **Expanded.** See `schatzker-luo.md` for the original Schatzker types, the 2018 CT-based revision, Luo's three-column concept and its updates, Moore's fracture-dislocation types (kept separate from an instability screening prompt), the ten-segment map, discordance prompts for AO/OTA 41, reliability data and provisional confidence caps.
 
 ---
 

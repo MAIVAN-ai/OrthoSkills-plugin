@@ -6,7 +6,7 @@
 
 ## Segment 41 — Tibial plateau (proximal tibia)
 
-✅ **Expanded.** See `tibial-plateau-41.md` for the full reasoning: type, group and subgroup decision points, 2018 qualifications and universal modifiers, worked examples, confidence ceilings, and misclassification patterns. Companion systems (Schatzker, revised Schatzker, column concepts, Moore) are in `../../05-region-classifications/references/schatzker-luo.md`.
+✅ **Expanded.** See `tibial-plateau-41.md` for the full reasoning: type, group and subgroup decision points, 2018 qualifications and universal modifiers, worked examples, provisional confidence caps, and misclassification patterns. Companion systems (Schatzker, revised Schatzker, column concepts, Moore) are in `../../05-region-classifications/references/schatzker-luo.md`.
 
 ---
 

@@ -18,7 +18,7 @@ Segment 41 is the **proximal end segment of the tibia**: the articular surface o
 
 - **Square rule.** An end segment is defined by a square whose side equals the widest part of the epiphysis/metaphysis. Everything between the proximal and distal squares is diaphysis (segment **42**).
 - **Centre rule.** A fracture is allocated to the segment that contains its centre. For a wedge fracture the centre is at the widest part of the wedge; for fragmentary-wedge and multifragmentary fractures it can only be judged after (mental) reduction.
-- **Articular rule.** A fracture with a **displaced articular component** is classified as an end-segment articular fracture, even if most of it lies in the diaphysis. An **undisplaced fissure** that reaches the joint does not change the allocation; the fracture centre decides.
+- **Articular rule.** A fracture with a **displaced articular component** is classified as an end-segment articular fracture, even if most of it lies in the diaphysis. An **undisplaced fissure** that reaches the joint does not change the allocation; the fracture centre decides. This rule decides the **segment** (42 vs 41). Within segment 41, any fracture line entering the articular surface makes the fracture articular (B or C); see section 2.
 
 **Neighbouring codes:**
 
@@ -31,7 +31,7 @@ Segment 41 is the **proximal end segment of the tibia**: the articular surface o
 
 | Type | Meaning | Key test |
 |---|---|---|
-| **41-A** | Extra-articular, including avulsions | Bony avulsion only, or no displaced fracture line into the plateau surfaces → A. Tibial spine (cruciate) avulsions are coded here even though they lie inside the joint |
+| **41-A** | Extra-articular, including avulsions | Bony avulsion only, or no fracture line into the plateau articular surfaces → A. Tibial spine (cruciate) avulsions are coded here even though they lie inside the joint |
 | **41-B** | Partial articular | Part of the joint surface is fractured; **the rest of the articular surface is still continuous with the metaphysis/diaphysis** |
 | **41-C** | Complete articular | The joint surface is disrupted **and completely separated from the diaphysis** |
 
@@ -40,6 +40,8 @@ The **B-versus-C question is the most consequential decision in segment 41**, an
 > **Is any part of the articular surface still attached to the diaphysis through intact bone?** Yes → B. No → C.
 
 Answering it reliably usually needs CT: a metaphyseal fracture line that looks complete on one radiograph may leave a bridge of intact cortex, and vice versa.
+
+Neither displacement nor the number of plateaus involved settles this question. In one series, 61 of 70 medial plateau fractures coded 41-B1/B3 extended into the lateral articular surface (Vogel 2024).
 
 ---
 
@@ -50,7 +52,7 @@ START
  │
  ├─ Bony avulsion only (capsule, tubercle, tibial spine / cruciate insertion)? ──► 41-A1
  │
- ├─ Displaced fracture line into the plateau surfaces?
+ ├─ Any fracture line into the plateau articular surfaces?
  │     NO ──► 41-A
  │             ├─ Simple metaphyseal fracture (spiral/oblique/transverse) ──► A2
  │             └─ Wedge or multifragmentary metaphyseal fracture ──► A3
@@ -90,7 +92,7 @@ Intact wedge (A3.1), fragmentary wedge (A3.2; the side of the wedge is a qualifi
 
 **Clinical relevance (A2/A3):** alignment and the soft-tissue envelope drive decisions. Proximal tibial fractures that extend towards the shaft carry a particular compartment-syndrome risk and need repeated clinical checks (Gahr 2023).
 
-> ⚠ **Before coding 41-A, exclude a displaced articular line on CT.** A metaphyseal fracture with an undisplaced articular fissure stays allocated by its centre; a displaced articular component makes it B or C.
+> ⚠ **Before coding 41-A, check CT for any fracture line reaching the plateau articular surfaces.** If one does, the fracture is articular (B or C), and the continuity test decides which. Displacement does not decide the type.
 
 ---
 
@@ -112,25 +114,23 @@ A split fragment plus a depressed articular zone: lateral (B3.1), medial (B3.2),
 
 The 2018 Compendium adds lowercase **qualifications in round brackets** to say where the injury sits:
 
-| Letter | Location |
-|---|---|
-| **t** | anterolateral |
-| **u** | posterolateral |
-| **v** | anteromedial |
-| **w** | posteromedial |
-| **x** | central |
-| **f** / **h** | lateral / medial (side of an oblique split or of a metaphyseal wedge) |
-| **d** / **e** | simple / multifragmentary metaphysis (C fractures) |
-| **s** | metadiaphyseal extension (C fractures) |
+| Letters | Meaning | Applies to |
+|---|---|---|
+| **t** / **u** / **x** | anterolateral / posterolateral / central | Lateral depressions: B2.1, B3.1 |
+| **v** / **w** / **x** | anteromedial / posteromedial / central | Medial depressions: B2.2, B3.2 |
+| **f** / **h** | lateral / medial | Side of an oblique split (B1.3, B3.3) or of a metaphyseal wedge (A3.1–A3.2, C2.1–C2.2) |
+| **d** / **e** | simple / multifragmentary metaphysis | C3 subgroups |
+| **s** | metadiaphyseal extension | C3 subgroups |
+| quadrant letters (t, u, v, w, x) | location of the articular fragmentation | C3 subgroups |
 
 Example: `41B2.1(u)` = lateral pure depression, posterolateral.
 
-> ℹ **Verification note.** The letter sets above are as printed in the Compendium (pp. S51–S52). Which set attaches to which subgroup is shown by page layout: t/u/x for lateral depressions and f/h for the oblique .3 subgroups are clearly supported, while the medial (v/w/x) and C-group mappings were read from layout and must be checked against the printed page before being relied on.
+> ✅ **Checked.** The letter sets and the subgroups they attach to were confirmed against the printed Compendium (pp. S50–S52) during surgeon review of this reference.
 
 ### Clinical relevance
 
 - **Lateral plateau (B1.1, B2.1, B3.1).** The commonest patterns; low-energy injuries typically produce unicondylar depression-type fractures (Gahr 2023). Meniscal and ligament injuries accompany a large proportion of plateau fractures (>70% in some series; Gahr 2023). Document depression depth and plateau widening.
-- **Medial plateau (B1.2, B2.2, B3.2).** Rarer, usually higher-energy, with a worse prognosis than lateral fractures (AO Surgery Reference). Treat as a possible **fracture-dislocation**: check popliteal pulses and the peroneal nerve, and use Moore in the companion reference.
+- **Medial plateau (B1.2, B2.2, B3.2).** Rarer, usually higher-energy, with a worse prognosis than lateral fractures (AO Surgery Reference). These patterns warrant a **documented neurovascular examination and an assessment for instability and ligament injury**. In 150 isolated medial plateau fractures, 9% presented with neurovascular injury and no fracture morphology predicted it (Cruz 2024). This is a screening prompt, not a diagnosis of fracture-dislocation; see the screening/classification split in the companion reference.
 - **Posterior location matters.** Posterolateral (u) and posteromedial (w) injuries are easily missed on the AP view. In a CT series of 246 knees, posterior segments were the most frequently involved in both B and C fractures (Krause 2016).
 
 > ⚠ **High-value distinctions in 41-B:**
@@ -152,7 +152,7 @@ The articular component is still simple; the metaphysis is an intact wedge (C2.1
 
 ### Group C3 — Fragmented articular surface
 
-More than one articular disruption: fragmentation of the lateral plateau (C3.1), the medial plateau (C3.2) or both (C3.3). The metaphysis may be simple or multifragmentary. In 2018 this is expressed by qualifications for **simple metaphysis**, **multifragmentary metaphysis** and **metadiaphyseal extension**, together with the quadrant letters above. See the verification note in section 5.
+More than one articular disruption: fragmentation of the lateral plateau (C3.1), the medial plateau (C3.2) or both (C3.3). The metaphysis may be simple or multifragmentary. In 2018 this is expressed by qualifications for **simple metaphysis**, **multifragmentary metaphysis** and **metadiaphyseal extension**, together with the quadrant letters above (mapping confirmed, section 5).
 
 ### Clinical relevance
 
@@ -202,86 +202,104 @@ More than one articular disruption: fragmentation of the lateral plateau (C3.1),
 
 ### Example 1 — Lateral split-depression, central
 
-**Vignette:** 71-year-old woman, low-energy fall. AP and lateral radiographs show a lateral plateau split with a depressed zone. CT (native, multiplanar): lateral split fragment; centrally located depressed segment; no metaphyseal fracture; medial plateau intact and continuous with the diaphysis.
+**Vignette:** 71-year-old woman, low-energy fall. AP and lateral radiographs show a lateral plateau split with a depressed zone. CT (native, multiplanar):
+- a **true split component**: a separate lateral cortical fragment, bounded by a fracture line through the lateral cortex and the articular margin
+- a centrally located depressed segment
+- no metaphyseal fracture
+- medial plateau intact and continuous with the diaphysis
 
 **Reasoning:**
 1. Articular involvement: yes. Medial plateau continuous with diaphysis → **B**.
-2. Split **and** depression → **B3**.
+2. A true split component (a separate cortical fragment) **and** a depressed zone → **B3**. Without a separate split fragment — lateral cortex intact — the same depression would be **B2**.
 3. Lateral plateau, split not running through the spines → **B3.1**.
 4. Depression central → qualification **(x)**.
 
 ```yaml
 ao_ota_classification:
   segment: "41"
+  imaging_basis: native_multiplanar_ct
+  confidence_scale: "ordinal, imaging-limited; not a calibrated probability (provisional caps, section 9)"
   primary:
     code: "41B3.1(x)"
     description_label: "Partial articular, split-depression, lateral plateau, central depression"
     confidence: 0.58
-    rationale: "CT shows a lateral split with a separate central depressed zone; medial plateau intact."
+    rationale: "CT shows a separate lateral split fragment and a separate central depressed zone; medial plateau intact."
   differentials:
     - code: "41B2.1(x)"
       confidence: 0.20
-      rationale: "If the 'split' is judged a non-displaced fissure, this is a pure depression."
+      rationale: "Only if multiplanar review shows no separate split fragment (lateral cortex intact): the depression is then the only articular injury."
     - code: "41B3.3"
       confidence: 0.10
       rationale: "If the split line is judged to exit through the tibial spines."
   image_quality_caveats: []
   what_would_change_the_classification:
-    - "Coronal CT showing whether the lateral cortex is truly split (B3) or intact (B2)."
+    - "Coronal and axial CT confirming whether a separate split fragment exists (B3) or the lateral cortex is intact (B2)."
   requires_surgeon_confirmation: true
-  reason_for_confirmation: "Split vs pure depression changes the fixation discussion (buttress vs elevation/raft support)."
+  reason_for_confirmation: "Split-depression vs pure depression changes the fixation discussion (buttress vs elevation with subchondral support)."
 ```
 
-### Example 2 — Medial split with a lateral fissure (B vs C)
+### Example 2 — Medial split, incomplete metaphyseal line (B vs C)
 
-**Vignette:** 34-year-old man, high-energy varus injury. Radiographs: displaced medial plateau split. CT: medial split fragment in the coronal plane extending posteromedially; a **non-displaced** fissure reaches the lateral articular surface. The lateral plateau remains continuous with the diaphysis through intact metaphyseal bone. Foot pulses palpable; ankle–brachial index pending.
+**Vignette:** 34-year-old man, high-energy varus injury. Radiographs: displaced medial plateau split. CT:
+- a coronal-plane medial split fragment with a posteromedial extension; no depression
+- an incomplete oblique line runs from the split into the metaphysis but stops short of the lateral cortex
+- the lateral plateau and its articular surface remain continuous with the shaft through intact bone
+
+Documented examination: symmetric foot pulses, peroneal nerve intact; no subluxation on imaging.
 
 **Reasoning:**
-1. Displaced articular component: yes.
-2. Continuity test: the **lateral plateau still connects to the diaphysis** → **B**, not C. The non-displaced fissure does not make it complete articular.
-3. Split without depression, medial → **B1.2**.
-4. This pattern is a likely fracture-dislocation: flag for Moore assessment and vascular work-up (companion reference).
+1. Articular involvement: medial plateau.
+2. Continuity test: the lateral plateau, with its part of the articular surface, is still attached to the shaft through intact bone → **B**. What decides this is the extent of the metaphyseal line, not how displaced it is.
+3. True split, no depressed zone → **B1** (a depressed medial zone would make it B3) → medial → **B1.2**.
+4. Medial pattern → the companion reference's **screening prompt** applies: examination for instability and neurovascular injury. This is not by itself a fracture-dislocation diagnosis.
 
 ```yaml
 ao_ota_classification:
   segment: "41"
+  imaging_basis: native_multiplanar_ct
+  confidence_scale: "ordinal, imaging-limited; not a calibrated probability (provisional caps, section 9)"
   primary:
     code: "41B1.2"
     description_label: "Partial articular, split, medial plateau"
     confidence: 0.58
-    rationale: "Displaced medial split; lateral plateau continuous with the diaphysis on CT."
+    rationale: "Medial split; the metaphyseal line is incomplete and the lateral plateau remains continuous with the shaft."
   differentials:
     - code: "41C1.1"
       confidence: 0.25
-      rationale: "If the lateral fissure is judged complete and the lateral plateau loses continuity with the diaphysis."
+      rationale: "If multiplanar review shows the metaphyseal line is complete, so that no articular part remains attached to the shaft."
     - code: "41B3.2"
       confidence: 0.12
-      rationale: "If a depressed medial zone is present on further review."
+      rationale: "If a depressed medial zone is present in addition to the split."
   image_quality_caveats: []
   what_would_change_the_classification:
-    - "Multiplanar CT review of the lateral fissure: complete vs incomplete."
+    - "Multiplanar CT review of where the metaphyseal line ends."
   requires_surgeon_confirmation: true
-  reason_for_confirmation: "Medial plateau fractures behave as fracture-dislocations; neurovascular and ligament assessment is urgent."
+  reason_for_confirmation: "B vs C depends on the metaphyseal line; medial patterns need screening for instability and neurovascular injury."
 ```
 
 ### Example 3 — Bicondylar, fragmented articular surface, multifragmentary metaphysis
 
-**Vignette:** 45-year-old motorcyclist. Radiographs: bicondylar fracture with metaphyseal comminution. Temporary spanning external fixator applied. CT after spanning: lateral plateau depression with several articular fragments; separate posteromedial coronal fragment; multifragmentary metaphysis without diaphyseal extension.
+**Vignette:** 45-year-old motorcyclist. Radiographs: bicondylar fracture with metaphyseal comminution. Temporary spanning external fixator applied. CT after spanning:
+- lateral plateau depression with several articular fragments
+- a separate posteromedial coronal fragment
+- multifragmentary metaphysis without diaphyseal extension
 
 **Reasoning:**
 1. Neither plateau is continuous with the diaphysis → **C**.
-2. Articular surface fragmented on both sides (lateral depression with multiple fragments plus the posteromedial fragment) → **C3**.
-3. Both plateaus → **C3.3**, with a qualification for multifragmentary metaphysis (see the verification note).
-4. Posteromedial fragment: describe separately; the code does not capture it.
+2. Articular surface fragmented on both sides (lateral depression with multiple fragments, plus the posteromedial fragment) → **C3**.
+3. Both plateaus → **C3.3**. Multifragmentary metaphysis → qualification **(e)**.
+4. Posteromedial fragment: describe it separately, because the code does not capture it.
 
 ```yaml
 ao_ota_classification:
   segment: "41"
+  imaging_basis: native_multiplanar_ct
+  confidence_scale: "ordinal, imaging-limited; not a calibrated probability (provisional caps, section 9)"
   primary:
-    code: "41C3.3"
+    code: "41C3.3(e)"
     description_label: "Complete articular, fragmented articular surface, both plateaus; multifragmentary metaphysis"
-    confidence: 0.64
-    rationale: "Articular fragmentation of both plateaus on CT; no articular segment continuous with the diaphysis."
+    confidence: 0.58
+    rationale: "Articular fragmentation of both plateaus on CT; no articular segment continuous with the diaphysis; metaphysis multifragmentary."
   differentials:
     - code: "41C2.3"
       confidence: 0.22
@@ -297,13 +315,15 @@ ao_ota_classification:
 
 ---
 
-## 9. Confidence ceilings for segment 41
+## 9. Confidence: meaning and provisional caps
 
 Human experts agree only moderately on tibial plateau codes, so the skill must not sound more certain than a panel of surgeons would be. Interobserver agreement for AO/OTA plateau codes has been reported as κ 0.36 (25 observers; Huitema 2022), 0.56–0.59 on CT (Yao 2022), and 0.62 at the three-column originators' centre (Zhu 2013). In Huitema 2022, observers rated their own confidence about 7/10 despite moderate or worse accuracy.
 
-**Define confidence as:** the estimated probability that a consensus panel of experienced trauma surgeons, reading the same images, would assign this code.
+These reliability studies measure agreement between observers. They do not show how likely a given code is to be right, and they cannot be converted into probabilities.
 
-**OrthoSkills default ceilings.** These are a maintainer convention, not values from the literature. Recalibrate them once a panel-referenced test set exists.
+**What the confidence number means.** It is an **ordinal, imaging-limited estimate**: it ranks how strongly the available images support one code over the alternatives, on a 0–1 scale. It is **not a calibrated probability**. No scored reference set exists yet to calibrate it. Every output states its `imaging_basis` and carries `confidence_scale: ordinal, imaging-limited; not a calibrated probability`.
+
+**Provisional output caps.** These are maintainer guardrails, neither derived from the literature nor calibrated. They stop the stated confidence from rising above what the imaging can support. Replace them once a panel-scored reference set exists.
 
 | Evidence available | Type (A/B/C) | Group | Subgroup | Qualifications |
 |---|---|---|---|---|
@@ -322,7 +342,7 @@ If B vs C or C2 vs C3 is unresolved, say so explicitly and route to skill 06. Do
 | 41-A1 | Skill 07 surfaces the ligament question (MRI, cruciate/collateral injury) before the bony one. |
 | 41-A2/A3 | Skill 07 discusses alignment and stability; skill 08 describes device classes for metaphyseal fixation (plates, nails, external fixation). |
 | 41-B lateral | Skill 07 surfaces options from non-operative care through arthroscopically assisted, percutaneous and open techniques. Skill 08 describes screws, buttress plates, subchondral (raft) support and void fillers. |
-| 41-B medial | Skill 07 flags the fracture-dislocation pattern first (vascular, nerve, ligaments), then buttressing of the medial column. |
+| 41-B medial | Skill 07 surfaces the screening for instability, ligament and neurovascular injury first, then the buttressing of the medial column. |
 | 41-C | Skill 07 surfaces staged management, column-specific approaches, external fixation, and — in selected older patients with non-reconstructable surfaces or pre-existing symptomatic arthritis — the primary arthroplasty discussion. Skill 08 describes dual plating, lateral locking plates, ring fixators and nails for the metadiaphyseal component. |
 
 Skills 07 and 08 surface options and the considerations behind them. They do not recommend one over another. The surgeon decides.
@@ -334,13 +354,14 @@ Skills 07 and 08 surface options and the considerations behind them. They do not
 | Mistake | Why it happens | How to avoid |
 |---|---|---|
 | Coding **B** when the metaphyseal fracture separates the whole articular block (should be **C**) | The articular injury involves one plateau, so it "looks unicondylar" | Apply the continuity test (section 2) on CT before coding any B with a metaphyseal line |
-| Coding **C** when one plateau is still attached to the diaphysis (should be **B**) | Dramatic metaphyseal comminution, or a non-displaced fissure into the other plateau | Same test; a non-displaced fissure does not make it complete articular |
+| Coding **C** when one plateau is still attached to the diaphysis (should be **B**) | Dramatic metaphyseal comminution, or fracture lines in both plateaus | Same test: what decides is whether any articular part remains continuous with the shaft, not displacement and not the number of plateaus involved |
+| Letting **displacement** decide the type | The Compendium's undisplaced-fissure rule concerns segment allocation (42 vs 41) | Within 41, any line into the articular surface makes it B or C; continuity decides which |
 | Coding **C1/C2** when the articular surface is fragmented (should be **C3**) | The AP shows one split; depressions hide on radiographs | Read axial and coronal CT for depressed or separate articular fragments |
 | Missing a **posteromedial coronal fragment** | Invisible on the AP; not encoded by AO/OTA | Axial CT; describe it separately; run the column analysis (skill 05) |
 | Missing a **posterolateral depression** | Overlaps on the AP; posterior segments are the most often involved | Lateral radiograph and CT; add qualification (u) |
 | Treating a **Segond / rim avulsion** as trivial | Small bony fragment | It signals ligament injury; MRI; consider a Moore pattern |
 | Folding the **fibula** into the tibial code | Pre-2018 habit | Code the fibula separately (4F) |
-| Classifying a **fracture-dislocation** as an ordinary plateau fracture | Focus on the bony pattern | Check for dislocation/subluxation; universal modifiers 5/6; Moore (skill 05) |
+| Overlooking a **fracture-dislocation** | Focus on the bony pattern | Screen medial, rim and high-energy patterns for instability (skill 05). Use universal modifiers 5/6 only when dislocation or subluxation is documented |
 
 ---
 
@@ -370,6 +391,8 @@ This reference assumes the case has come through skill 02 (Image Quality Check).
 - Yao P, et al. Intra- and inter-observer reliability assessment of widely used classifications and the "Ten-segment classification" of tibial plateau fractures. *Knee.* 2022;35:149–156. doi:[10.1016/j.knee.2022.03.002](https://doi.org/10.1016/j.knee.2022.03.002)
 - Zhu Y, et al. Inter-observer reliability assessment of the Schatzker, AO/OTA and three-column classification of tibial plateau fractures. *J Trauma Manag Outcomes.* 2013;7:7. doi:[10.1186/1752-2897-7-7](https://doi.org/10.1186/1752-2897-7-7)
 - Gahr P, Kopf S, Pauly S. Current concepts review. Management of proximal tibial fractures. *Front Surg.* 2023;10:1138274. doi:[10.3389/fsurg.2023.1138274](https://doi.org/10.3389/fsurg.2023.1138274)
+- Cruz JP, Michaud JB, Van Rysselberghe NL, et al. Outcomes of isolated medial tibial plateau fractures by fracture morphology. *Injury.* 2024;55(8):111662. doi:[10.1016/j.injury.2024.111662](https://doi.org/10.1016/j.injury.2024.111662)
+- Vogel M, Hoffman A, Revak T. Schatzker IV tibial plateau fractures: are they always unicondylar? *OTA Int.* 2024;7(3):e341. doi:[10.1097/OI9.0000000000000341](https://doi.org/10.1097/OI9.0000000000000341)
 - Skill 09 (Evidence Retrieval) for live literature queries.
 
 🩺 *Educational reference only — not medical advice. Always confirm classification with a qualified surgeon and the official AO Foundation publications.*

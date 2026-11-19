@@ -71,7 +71,7 @@ This skill has region-specific reference files in `references/`:
 | `references/humerus-stubs.md` | Stubs for 11, 12, 13. PRs welcome. |
 | `references/forearm-stubs.md` | Stubs for 21, 22, 23. PRs welcome. |
 | `references/femur-shaft-distal-stubs.md` | Stubs for 32, 33, 34. PRs welcome. |
-| `references/tibial-plateau-41.md` | **Deep reference.** Proximal tibia 41-A / 41-B / 41-C: the B-vs-C continuity test, groups, subgroups, 2018 qualifications and universal modifiers, worked examples, confidence ceilings. Run with the Schatzker / column companion in skill 05. |
+| `references/tibial-plateau-41.md` | **Deep reference.** Proximal tibia 41-A / 41-B / 41-C: the B-vs-C continuity test, groups, subgroups, 2018 qualifications and universal modifiers, worked examples, provisional confidence caps. Run with the Schatzker / column companion in skill 05. |
 | `references/tibia-stubs.md` | Stubs for 42, 43, 44. PRs welcome. |
 | `references/spine-pelvis-stubs.md` | Stubs for spine, 61, 62. PRs welcome. |
 
@@ -86,7 +86,7 @@ For every region, follow this consistent process:
 3. **Determine group** (1, 2, 3) within the type.
 4. **Determine subgroup** (.1, .2, .3) if applicable and image quality supports it.
 5. **Combine into the full code.**
-6. **State confidence** explicitly as a 0.0–1.0 number with a one-line rationale.
+6. **State confidence** explicitly as a 0.0–1.0 number with a one-line rationale. Treat it as an ordinal, imaging-limited estimate, not a calibrated probability; region references may set provisional caps.
 7. **List differentials** — the 1–2 most plausible alternative codes with their confidences.
 8. **State what additional information would change the classification** (e.g. "a true lateral would distinguish 31-A2 from 31-A3").
 

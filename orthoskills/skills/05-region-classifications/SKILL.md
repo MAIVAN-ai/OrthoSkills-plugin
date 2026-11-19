@@ -30,7 +30,7 @@ From skill 03's `region_specific_systems` list, look up each in the reference fi
 | Proximal femur (neck) | **Garden + Pauwels** | `references/garden-pauwels.md` (canonical deep) |
 | Proximal humerus | Neer | `references/other-systems-stubs.md` |
 | Radial head | Mason | `references/other-systems-stubs.md` |
-| Tibial plateau | Schatzker (+ 2018 revision), Luo three-column (+ updates), Moore (fracture-dislocation flag) | `references/schatzker-luo.md` (deep) |
+| Tibial plateau | Schatzker (+ 2018 revision), Luo three-column (+ updates), Moore (instability screening prompt; type only with fracture-dislocation morphology) | `references/schatzker-luo.md` (deep) |
 | Ankle | Lauge-Hansen, Weber | `references/other-systems-stubs.md` |
 | Talar neck | Hawkins | `references/other-systems-stubs.md` |
 | Calcaneus | Sanders | `references/other-systems-stubs.md` |
@@ -44,7 +44,7 @@ For each system, follow the same reasoning pattern as skill 04:
 
 1. State the system and its purpose.
 2. Walk through the decision points.
-3. Produce a primary classification with explicit confidence.
+3. Produce a primary classification with explicit confidence (an ordinal, imaging-limited estimate, not a calibrated probability; region references may set provisional caps).
 4. List differentials.
 5. State what additional info would change the classification.
 6. Surgeon confirmation required.
@@ -96,6 +96,8 @@ consistency_with_ao_ota:
   consistent: true
   notes: ""
 ```
+
+For the tibial plateau, Moore is recorded as two separate blocks — `instability_screening` (a prompt to examine) and `moore` (a type, assigned only when the morphology supports a fracture-dislocation) — and every output states its `imaging_basis`. See `references/schatzker-luo.md`.
 
 ## Example
 

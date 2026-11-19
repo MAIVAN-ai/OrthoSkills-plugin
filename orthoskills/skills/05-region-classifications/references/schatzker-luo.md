@@ -11,7 +11,7 @@ These systems answer different questions about a tibial plateau fracture. Use th
 | **Three-column concept** (Luo 2010; definitions per Zhu 2012/2013) | Which columns have a cortical break on axial CT? | Approach and column-specific fixation |
 | **Updated three-column concept** (Wang 2016) | Which injury mechanism: varus/valgus, flexion/extension? | Fixation sequence, where the main buttress goes |
 | **Revised three-column** (Hoekstra 2017) | Does a lateral-column fracture extend into the posterolateral corner? | Lateral vs posterolateral approach |
-| **Moore** (1981) | Is this a fracture-dislocation rather than a plateau fracture? | Ligament and neurovascular injury risk |
+| **Moore** (1981) | Does the morphology show a fracture-dislocation pattern? (Kept separate from the screening prompt, section 5) | Ligament and neurovascular injury risk |
 | **Ten-segment** (Krause 2016) | Which articular segments are depressed or comminuted? | Articular visualisation and approach |
 
 > **Evaluation hygiene.** The worked examples are synthetic teaching vignettes. Do not add cases that are used to evaluate the workflow; keep test cases held out.
@@ -132,13 +132,43 @@ The type descriptions below follow the review by Gahr et al. (2023):
 | **IV** | Rim compression: depression of the plateau edge with ligament rupture | Ligament injury |
 | **V** | Four-part: comminuted, including eminence avulsion | Cruciates may stay attached to the eminence fragment |
 
-**How to use it in this skill.** Moore is primarily a **safety flag**. Set `fracture_dislocation_suspected: true` whenever any of the following is present, and escalate through skill 06 / skill 96 logic:
-- a medial plateau fracture (Schatzker IV)
-- a rim avulsion or rim compression
-- an eminence fragment together with a condylar fracture
-- signs of subluxation
+### Screening and classification are separate outputs
 
-For knee dislocations, the review recommends (CT) angiography when arterial injury is suspected or the ankle–brachial index is below 0.9 (Gahr 2023). Local protocols apply.
+Moore's work separated unstable fracture-dislocations from ordinary plateau fractures. **A medial plateau fracture is not automatically a fracture-dislocation.** This skill therefore records two different things:
+
+1. **Screening prompt** — `instability_screening`. The fracture pattern warrants checking for instability and for associated neurovascular and ligament injury. Trigger it for:
+   - medial or posteromedial plateau fractures (Schatzker IV patterns)
+   - rim avulsion or rim compression fragments
+   - an eminence fragment together with a condylar fracture
+   - any sign of subluxation, or a high-energy mechanism
+
+   It is a prompt to examine, not a diagnosis.
+2. **Moore classification** — `moore`. Assign a type **only when the morphology supports that fracture-dislocation pattern**, for example documented subluxation or instability together with the matching fracture morphology. Otherwise record `assigned: false`, the candidate type if one is suggested, and the reason. Typing is not always possible: in a six-centre cohort of 150 isolated medial plateau fractures, 139 could be assigned a Moore type (Cruz 2024).
+
+```yaml
+instability_screening:
+  triggered: true
+  reasons: ["medial plateau fracture", "posteromedial coronal fragment"]
+  prompts:
+    - "Documented neurovascular examination, repeated over time"
+    - "Assess for subluxation and ligament injury"
+    - "Vascular testing per the local pathway for suspected knee dislocation or other high-risk injury"
+moore:
+  assigned: false
+  candidate_type: I
+  reason: "No subluxation or instability documented"
+  requires_surgeon_confirmation: true
+```
+
+### Neurovascular assessment
+
+The first step is a **documented neurovascular examination**: pulses and perfusion, plus motor and sensory function including the peroneal nerve. Repeat it over time. Further vascular testing follows the **local pathway for suspected knee dislocation or other high-risk injury**:
+
+- **Knee dislocation.** A prospective study used the ankle–brachial index (ABI): arteriography below 0.90, serial examination at 0.90 or above. No arterial injury was missed (Mills 2004). Reviews emphasise serial vascular examination and selective CT angiography (Hantes 2026).
+- **Schatzker IV–VI.** One single-centre series screened all Schatzker IV–VI fractures with symmetric pulses by ABI, with CT angiography at ABI ≤ 0.9. Over 17 years and 437 fractures it missed no vascular injury (Kantor 2025). This shows a structured screen can work; it is one centre's protocol, not a universal pathway.
+- **Isolated medial plateau fractures.** In 150 such fractures, 9% presented with neurovascular injury, and no fracture morphology predicted it (Cruz 2024). This supports a careful screening prompt for medial patterns. It does not support an automatic fracture-dislocation label or a single imaging pathway.
+
+CT angiography is tied to clinical findings, ABI results and the applicable protocol. It is not an automatic test for every medial plateau fracture.
 
 ---
 
@@ -152,42 +182,56 @@ In 246 knees, posterior segments were the most frequently affected in both B and
 
 ---
 
-## 7. How the systems relate — crosswalk and consistency rules
+## 7. How the systems relate — crosswalk and discordance prompts
 
-Approximate crosswalk. Use it to check consistency, not to convert codes mechanically.
+The systems are recorded **independently**:
+- The AO/OTA code follows the continuity assessment in skill 04: is any part of the articular surface still continuous with the shaft?
+- Schatzker follows its own definitions.
 
-| Pattern | AO/OTA 41 | Schatzker | Columns | Moore |
+The table shows typical correspondences. It is useful for spotting discordance, never for converting one code into another.
+
+| Pattern | AO/OTA 41 (typical) | Schatzker | Columns | Moore |
 |---|---|---|---|---|
 | Lateral split | B1.1 | I | One (lateral) | — |
-| Lateral split-depression | B3.1 | II | One (lateral), or two if a posterior wall break | — |
+| Lateral split-depression | B3.1 | II | One (lateral), or two with a posterior wall break | — |
 | Lateral pure depression, no cortical break | B2.1 | III | Zero | — |
 | Posterior-column depression with posterior wall break | B2.1(u) / B3.1(u) | Not represented (often forced into II/III) | One (posterior) | — |
-| Medial split and/or depression | B1.2 / B2.2 / B3.2 | IV | One (medial) or two (+ posterior) | Consider I or II |
-| Bicondylar, without metaphyseal–diaphyseal dissociation | Usually C | V | Two or three | Consider V |
-| Any plateau fracture + metaphyseal–diaphyseal dissociation | C (qualify metaphysis / metadiaphyseal extension) | VI | Per articular columns | — |
+| Medial split and/or depression | B1.2 / B2.2 / B3.2, or C — by the continuity test | IV | One (medial) or two (+ posterior) | Screen; type only with fracture-dislocation morphology |
+| Bicondylar involvement | B or C — by the continuity test | V | Two or three | Screen; type only with fracture-dislocation morphology |
+| Any plateau fracture + metaphyseal–diaphyseal discontinuity | B or C — by the continuity test | VI | Per articular columns | — |
 
-**Consistency rules** (surface every violation; skill 05 step 3):
-1. **Schatzker VI normally pairs with 41-C**, because the dissociation separates the articular block from the diaphysis. A VI with a 41-A or 41-B code needs an explicit justification, typically that the metaphyseal line was judged incomplete or the articular component non-displaced.
-2. **Schatzker I–III pair with lateral 41-B codes.** If skill 04 returned C, either the metaphyseal fracture changes the Schatzker type (to VI) or one of the codes is wrong.
-3. **Schatzker IV pairs with medial 41-B codes.** A IV with 41-C should prompt a check of the lateral plateau's continuity with the diaphysis.
-4. **Column counts require a cortical break.** A zero-column fracture should not carry a "column fracture" label in any free-text summary.
-5. **A posterior fragment found on CT must appear somewhere** in the combined record (revised Schatzker P, a column, a qualification, or `associated_findings`), because neither original Schatzker nor the AO/OTA code guarantees it.
+Neither bicondylar involvement nor displacement settles B vs C. In one series, 61 of 70 medial plateau fractures coded AO/OTA 41-B1/B3 extended into the lateral articular surface (Vogel 2024).
+
+**Discordance prompts.** Re-check, record and flag; never auto-correct.
+1. **The Schatzker type and the AO/OTA code imply different anatomy**, e.g. Schatzker VI with a 41-B code, or Schatzker I–III with 41-C. Re-check both definitions against the images:
+   - Is there a metaphyseal–diaphyseal discontinuity? (Schatzker VI)
+   - Is any part of the articular surface still continuous with the shaft? (AO/OTA B vs C, skill 04)
+
+   Record both answers, set `consistent: false` with the reason, and flag for surgeon review. Do not label it a coding error, and do not change either code to make them agree.
+2. **A bicondylar Schatzker type (V/VI) with any AO/OTA code.** Confirm that the AO/OTA type came from the continuity assessment, not from the number of plateaus involved.
+3. **Column counts require a cortical break.** A zero-column fracture should not carry a "column fracture" label in any free-text summary.
+4. **Every posterior fragment found on CT must appear in the combined record.** Neither original Schatzker nor the AO/OTA code guarantees it, so record it as a revised-Schatzker P modifier, a column, a qualification, or under `associated_findings`.
 
 ---
 
 ## 8. Worked examples
 
-*The same synthetic vignettes as in `tibial-plateau-41.md` (examples 1–3), with the CT details these systems need. Not real patients; not evaluation cases.*
+*The same synthetic vignettes as in `tibial-plateau-41.md` (examples 1–3), with the CT and clinical details these systems need. Not real patients; not evaluation cases.*
 
 ### Example 1 — Lateral split-depression, central depression
 
-Extra CT detail: the main split plane lies **anterior** to the coronal equator. The depressed zone is central. Only the lateral cortex is broken; there is no posterior wall break.
+**Extra CT detail:**
+- The lateral split is a **true split component**: a separate cortical fragment, bounded by a fracture line through the lateral cortex and the articular margin. Its main plane lies **anterior** to the coronal equator.
+- The depressed zone is central.
+- Only the lateral cortex is broken; there is no posterior wall break.
 
 ```yaml
+imaging_basis: native_multiplanar_ct
+confidence_scale: "ordinal, imaging-limited; not a calibrated probability (provisional caps, section 9)"
 region_specific_classifications:
   - system: Schatzker
-    primary: { type: II, confidence: 0.72, rationale: "Lateral split plus depression; medial plateau intact." }
-    differentials: [{ type: III, confidence: 0.18, rationale: "If the split is judged a non-displaced fissure." }]
+    primary: { type: II, confidence: 0.72, rationale: "Separate lateral split fragment plus a depressed zone; medial plateau intact." }
+    differentials: [{ type: III, confidence: 0.18, rationale: "Only if multiplanar review finds no separate split fragment (lateral cortex intact)." }]
     requires_surgeon_confirmation: true
   - system: Schatzker_revised_2018
     primary: { type: II, main_fracture_plane: { lateral: A }, confidence: 0.62 }
@@ -195,23 +239,34 @@ region_specific_classifications:
   - system: Luo_three_column
     primary: { columns: [lateral], count: 1, confidence: 0.70, rationale: "Cortical break in the lateral column only." }
     requires_surgeon_confirmation: true
-  - system: Moore
-    fracture_dislocation_suspected: false
+instability_screening:
+  triggered: false
+  note: "Routine documented neurovascular examination still applies."
+moore:
+  assigned: false
+  reason: "No fracture-dislocation morphology."
 consistency_with_ao_ota:
   ao_ota_code: "41B3.1(x)"
   consistent: true
   notes: ""
 ```
 
-### Example 2 — Medial split with posteromedial extension, lateral fissure
+### Example 2 — Medial split with posteromedial extension
 
-Extra CT detail: a coronal-plane medial split. Cortical breaks are confirmed in the medial column and in the posteromedial part of the posterior column. The lateral fissure is non-displaced. High-energy varus mechanism.
+**Extra CT detail:**
+- Coronal-plane medial split with a posteromedial extension; no depression.
+- Cortical breaks in the medial column and in the posteromedial part of the posterior column.
+- An incomplete oblique line runs from the split into the metaphysis but stops short of the lateral cortex. The lateral plateau and its articular surface remain continuous with the shaft.
+
+**Clinical detail:** high-energy varus mechanism. Documented examination shows symmetric foot pulses and an intact peroneal nerve. No subluxation on imaging; ligament status not yet assessed.
 
 ```yaml
+imaging_basis: native_multiplanar_ct
+confidence_scale: "ordinal, imaging-limited; not a calibrated probability (provisional caps, section 9)"
 region_specific_classifications:
   - system: Schatzker
-    primary: { type: IV, confidence: 0.70, rationale: "Displaced medial plateau split; lateral plateau not displaced." }
-    differentials: [{ type: V, confidence: 0.15, rationale: "If the lateral fissure is treated as a lateral plateau fracture." }]
+    primary: { type: IV, confidence: 0.70, rationale: "Medial plateau split; lateral plateau not fractured." }
+    differentials: [{ type: VI, confidence: 0.15, rationale: "Only if the metaphyseal line proves complete (metaphyseal-diaphyseal discontinuity)." }]
     requires_surgeon_confirmation: true
   - system: Schatzker_revised_2018
     primary: { type: IV, main_fracture_plane: { medial: P }, confidence: 0.60 }
@@ -220,25 +275,35 @@ region_specific_classifications:
     primary: { columns: [medial, posterior], count: 2, confidence: 0.62 }
     differentials: [{ columns: [posterior], count: 1, confidence: 0.20, rationale: "If the medial cortical break is judged to lie posterior to line OB." }]
     requires_surgeon_confirmation: true
-  - system: Moore
-    fracture_dislocation_suspected: true
-    primary: { type: I, confidence: 0.50, rationale: "Posteromedial split of the medial condyle after a varus injury." }
-    escalation: "Vascular assessment (ABI / CT angiography per local protocol), peroneal nerve, ligament MRI."
+instability_screening:
+  triggered: true
+  reasons: ["medial plateau fracture", "posteromedial extension", "high-energy varus mechanism"]
+  prompts:
+    - "Repeat and document the neurovascular examination"
+    - "Assess ligament injury and stability"
+    - "Vascular testing per the local pathway for suspected knee dislocation or other high-risk injury"
+moore:
+  assigned: false
+  candidate_type: I
+  reason: "Morphology resembles a posteromedial split, but no subluxation or instability is documented."
+  requires_surgeon_confirmation: true
 consistency_with_ao_ota:
   ao_ota_code: "41B1.2"
   consistent: true
-  notes: "Schatzker IV with a medial B code; lateral plateau continuous with the diaphysis."
+  notes: "Lateral plateau continuous with the shaft (skill 04 continuity test)."
 ```
 
 ### Example 3 — Bicondylar, fragmented articular surface, metaphyseal comminution
 
-Extra CT detail (after spanning external fixation):
-- Lateral plateau: depression with several articular fragments; main lateral split **anterior** to the equator.
-- Medial plateau: anteromedial fracture line plus a separate **posteromedial** coronal fragment.
+**Extra CT detail** (after spanning external fixation):
+- Lateral plateau: depression with several articular fragments; the main lateral split lies **anterior** to the equator.
+- Medial plateau: an anteromedial fracture line plus a separate **posteromedial** coronal fragment.
 - Metaphysis: comminution disconnects the plateau from the diaphysis.
-- Intercondylar eminence: intact.
+- No eminence fragment. No subluxation documented.
 
 ```yaml
+imaging_basis: native_multiplanar_ct
+confidence_scale: "ordinal, imaging-limited; not a calibrated probability (provisional caps, section 9)"
 region_specific_classifications:
   - system: Schatzker
     primary: { type: VI, confidence: 0.66, rationale: "Bicondylar articular injury with metaphyseal-diaphyseal discontinuity through comminution." }
@@ -250,13 +315,19 @@ region_specific_classifications:
   - system: Luo_three_column
     primary: { columns: [lateral, medial, posterior], count: 3, confidence: 0.72 }
     requires_surgeon_confirmation: true
-  - system: Moore
-    fracture_dislocation_suspected: false
-    notes: "Re-assess for a Moore V pattern if an eminence fragment or subluxation is found."
+instability_screening:
+  triggered: true
+  reasons: ["high-energy bicondylar fracture", "posteromedial coronal fragment"]
+  prompts:
+    - "Serial documented neurovascular and compartment examinations"
+    - "Vascular testing per the local pathway for high-risk injury"
+moore:
+  assigned: false
+  reason: "No eminence fragment or subluxation documented; re-assess if either is found."
 consistency_with_ao_ota:
-  ao_ota_code: "41C3.3"
+  ao_ota_code: "41C3.3(e)"
   consistent: true
-  notes: "Schatzker VI with 41-C (rule 1). Posteromedial fragment recorded as medial: P and in the posterior column (rule 5)."
+  notes: "The AO/OTA type comes from the continuity test, not from the Schatzker type. Posteromedial fragment recorded as medial: P and in the posterior column."
 ```
 
 ---
@@ -277,18 +348,18 @@ No tibial plateau classification is reproducible enough to be treated as ground 
 
 The systematic review by Millar et al. (2018) found 38 classification systems. Only five had been tested for reliability. Plain-film reliability was typically moderate (κ 0.40–0.60), CT generally improved it, and only 11 of 32 complete systems had been linked to clinical outcome.
 
-**Reading the evidence.** Figures from the originators' own centres are the most favourable. Independent multi-observer studies (Mellema, Huitema) report fair-to-moderate agreement. Calibrate to the independent figures.
+**Reading the evidence.** Figures from the originators' own centres are the most favourable. Independent multi-observer studies (Mellema, Huitema) report fair-to-moderate agreement. These studies measure agreement between observers. They do not show how likely a given code is to be right, and they cannot be converted into probabilities for this skill.
 
-**Define confidence as:** the estimated probability that a consensus panel of experienced trauma surgeons, reading the same images, would assign this category.
+**What the confidence number means.** It is an **ordinal, imaging-limited estimate**: it ranks how strongly the available images support one category over the alternatives, on a 0–1 scale. It is **not a calibrated probability**. No scored reference set exists yet to calibrate it, and the reliability studies above do not establish one. Every output states its `imaging_basis` and carries `confidence_scale: ordinal, imaging-limited; not a calibrated probability`.
 
-**OrthoSkills default ceilings.** These are a maintainer convention, not values from the literature. Recalibrate them against a panel-referenced test set.
+**Provisional output caps.** These are maintainer guardrails, neither derived from the literature nor calibrated. They stop the stated confidence from rising above what the imaging can support. Replace them once a panel-scored reference set exists.
 
 | System | Radiographs only | CT as screen photos / selected images | Native multiplanar CT |
 |---|---|---|---|
 | Schatzker type | ≤ 0.65 | ≤ 0.70 | ≤ 0.80 |
 | Revised Schatzker A/P modifiers | Not assessable | ≤ 0.50 | ≤ 0.70 |
 | Three-column (which columns) | Not assessable | ≤ 0.55 | ≤ 0.80 |
-| Moore type | Flag only | Flag only | ≤ 0.60, plus the clinical flag |
+| Moore type | Screening prompt only | Screening prompt only | ≤ 0.60, only when fracture-dislocation morphology is present |
 | Ten-segment | Not assessable | Not assessable | Descriptive list only; no confidence |
 
 ---
@@ -298,14 +369,16 @@ The systematic review by Millar et al. (2018) found 38 classification systems. O
 | Pitfall | Mitigation |
 |---|---|
 | Calling a unicondylar fracture with metaphyseal–diaphyseal dissociation "Schatzker II/III" | Type VI is defined by the dissociation; the plateau pattern can be anything |
-| Calling Schatzker IV "a simple medial split" | Treat as a possible fracture-dislocation: Moore flag, neurovascular assessment, CT for the posteromedial fragment |
+| Calling Schatzker IV "a simple medial split" | Trigger the screening prompt (documented neurovascular examination, stability). Get CT for the posteromedial fragment and for lateral extension: Schatzker IV fractures often extend into the lateral articular surface (Vogel 2024) |
+| Turning the screening prompt into a Moore diagnosis | Keep `instability_screening` and `moore` as separate fields; assign a Moore type only when the morphology supports a fracture-dislocation |
+| Ordering vascular imaging from the fracture label alone | Neurovascular examination first; vascular testing per the local pathway, driven by findings, ABI and risk |
 | Missing the posteromedial coronal fragment in bicondylar fractures | It is common (59% of 111 bicondylar fractures, Higgins 2009) and is not encoded by Schatzker or AO/OTA. Record it explicitly |
 | Labelling an isolated posterolateral depression "Schatzker III" without location | Add revised Schatzker P and the column description; note the posterolateral-corner convention (Luo vs Hoekstra) |
 | Inferring columns from AP radiographs | Columns are defined on axial CT |
 | Counting a pure depression as a column fracture | No cortical break → zero-column |
 | Mixing Luo's and Hoekstra's posterolateral boundaries in one record | State the convention used |
 | Quoting originators' reliability figures as typical | Use independent multi-observer figures (section 9) |
-| Treating a classification disagreement between systems as noise | It usually means a boundary case or an error. Surface it (consistency rules, section 7) |
+| Treating a disagreement between systems as noise, or as proof of an error | Re-check both definitions against the images and flag it for review (discordance prompts, section 7). Do not auto-correct either code |
 
 ---
 
@@ -331,6 +404,11 @@ Based on articles retrieved from PubMed unless marked otherwise.
 - Patange Subba Rao SP, Lewis J, Haddad Z, Paringe V, Mohanty K. Three-column classification and Schatzker classification: a three- and two-dimensional computed tomography characterisation and analysis of tibial plateau fractures. *Eur J Orthop Surg Traumatol.* 2014;24(7):1263–1270. doi:[10.1007/s00590-013-1308-9](https://doi.org/10.1007/s00590-013-1308-9)
 - Gahlot N, Kunal K, Elhence A, et al. Ten-segment classification has lowest inter/intra-observer reliability as compared to Schatzker, three-column and AO systems for tibial plateau fractures. *Arch Bone Jt Surg.* 2023;11(4):256–261. doi:[10.22038/ABJS.2022.63442.3061](https://doi.org/10.22038/ABJS.2022.63442.3061)
 - Millar SC, Arnold JB, Thewlis D, Fraysse F, Solomon LB. A systematic literature review of tibial plateau fractures: what classifications are used and how reliable and useful are they? *Injury.* 2018;49(3):473–490. doi:[10.1016/j.injury.2018.01.025](https://doi.org/10.1016/j.injury.2018.01.025)
+- Cruz JP, Michaud JB, Van Rysselberghe NL, et al. Outcomes of isolated medial tibial plateau fractures by fracture morphology. *Injury.* 2024;55(8):111662. doi:[10.1016/j.injury.2024.111662](https://doi.org/10.1016/j.injury.2024.111662)
+- Kantor AH, Thorne TJ, Dong W, et al. Ankle-brachial index is an effective screening tool for vascular injury in Schatzker type-4 to 6 tibial plateau fractures with symmetric pulses. *J Bone Joint Surg Am.* 2025;107(4):408–413. doi:[10.2106/JBJS.24.00545](https://doi.org/10.2106/JBJS.24.00545)
+- Mills WJ, Barei DP, McNair P. The value of the ankle-brachial index for diagnosing arterial injury after knee dislocation: a prospective study. *J Trauma.* 2004;56(6):1261–1265. doi:[10.1097/01.ta.0000068995.63201.0b](https://doi.org/10.1097/01.ta.0000068995.63201.0b)
+- Hantes M, Raoulis V, Zibis A, et al. Multiligament-injured knee: what the general orthopedic surgeon should know. *EFORT Open Rev.* 2026;11(5):426–436. doi:[10.1530/EOR-2026-0053](https://doi.org/10.1530/EOR-2026-0053)
+- Vogel M, Hoffman A, Revak T. Schatzker IV tibial plateau fractures: are they always unicondylar? *OTA Int.* 2024;7(3):e341. doi:[10.1097/OI9.0000000000000341](https://doi.org/10.1097/OI9.0000000000000341)
 - Skill 09 (Evidence Retrieval) for live literature queries.
 
 🩺 *Educational reference only — not medical advice. Always confirm with a qualified surgeon and consult primary sources for authoritative system descriptions.*
