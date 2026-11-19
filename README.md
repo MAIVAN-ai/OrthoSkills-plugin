@@ -69,6 +69,8 @@ The `orthoskills` plugin contains 12 skills along the orthopaedic surgical workf
 **Canonical deep references** (full reasoning, worked examples, misclassification patterns):
 - AO/OTA segment 31 (proximal femur) — `orthoskills/skills/04-aoota-classification/references/proximal-femur-31.md`
 - Garden + Pauwels (femoral neck companion) — `orthoskills/skills/05-region-classifications/references/garden-pauwels.md`
+- AO/OTA segment 41 (tibial plateau) — `orthoskills/skills/04-aoota-classification/references/tibial-plateau-41.md` *(draft, pending surgeon review)*
+- Schatzker + column concepts + Moore (tibial plateau companion) — `orthoskills/skills/05-region-classifications/references/schatzker-luo.md` *(draft, pending surgeon review)*
 
 Other anatomical regions are present as **stub references** ready for community expansion (see `CONTRIBUTING.md`).
 
@@ -92,6 +94,7 @@ OrthoSkills/
 │       │   ├── SKILL.md
 │       │   └── references/
 │       │       ├── proximal-femur-31.md       ← canonical deep
+│       │       ├── tibial-plateau-41.md       ← deep (tibial plateau)
 │       │       ├── humerus-stubs.md
 │       │       ├── forearm-stubs.md
 │       │       ├── femur-shaft-distal-stubs.md
@@ -101,6 +104,7 @@ OrthoSkills/
 │       │   ├── SKILL.md
 │       │   └── references/
 │       │       ├── garden-pauwels.md          ← canonical companion
+│       │       ├── schatzker-luo.md           ← tibial plateau companion
 │       │       └── other-systems-stubs.md
 │       ├── 06-differential-reasoning/SKILL.md
 │       ├── 07-treatment-mapping/SKILL.md

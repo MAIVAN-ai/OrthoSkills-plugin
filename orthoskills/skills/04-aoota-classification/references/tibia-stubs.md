@@ -1,41 +1,12 @@
 # AO/OTA Tibia / Fibula — Stubs
 
-> 🚧 **Status:** stub references. PRs welcome to expand any of these to the depth of `proximal-femur-31.md`.
+> 🚧 **Status:** stub references for segments 42–44. PRs welcome to expand any of these to the depth of `proximal-femur-31.md` and `tibial-plateau-41.md`. Segment 41 has its own deep reference.
 
 ---
 
 ## Segment 41 — Tibial plateau (proximal tibia)
 
-**Scope:** the proximal tibial articular surface and the metaphyseal region.
-
-**Type letters in segment 41:**
-- **41-A** — Extra-articular
-- **41-B** — Partial articular
-- **41-C** — Complete articular
-
-**Key complementary classifications:**
-- **Schatzker** (I–VI) — the dominant clinical system for tibial plateau:
-  - I: Lateral split
-  - II: Lateral split + depression
-  - III: Lateral pure depression
-  - IV: Medial plateau
-  - V: Bicondylar
-  - VI: Plateau + metadiaphyseal dissociation
-- **Luo's three-column concept** — lateral, medial, and posterior columns; aids posterior approach planning especially for posteromedial fragments.
-
-**Clinical pitfalls:**
-- **Medial plateau (Schatzker IV)** is a high-energy injury — always look for concomitant ligamentous and neurovascular injury (popliteal vessels, peroneal nerve).
-- **Posteromedial fragment** — invisible on AP, easily missed without lateral and CT. Often requires a separate posterior approach.
-- **Compartment syndrome** is a recognised risk, especially in Schatzker V/VI patterns.
-
-**Imaging needs:** AP, lateral, oblique; **CT essentially mandatory** for B-type and C-type plateau fractures.
-
-**Expand-me checklist for contributors:**
-- [ ] Detailed groups within 41-A, 41-B, 41-C
-- [ ] Schatzker cross-link with worked examples for I–VI
-- [ ] Luo three-column reasoning and surgical approach implications
-- [ ] Worked example end-to-end
-- [ ] Compartment syndrome reminder
+✅ **Expanded.** See `tibial-plateau-41.md` for the full reasoning: type, group and subgroup decision points, 2018 qualifications and universal modifiers, worked examples, confidence ceilings, and misclassification patterns. Companion systems (Schatzker, revised Schatzker, column concepts, Moore) are in `../../05-region-classifications/references/schatzker-luo.md`.
 
 ---
 

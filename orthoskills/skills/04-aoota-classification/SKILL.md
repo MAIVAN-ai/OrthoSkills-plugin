@@ -71,7 +71,8 @@ This skill has region-specific reference files in `references/`:
 | `references/humerus-stubs.md` | Stubs for 11, 12, 13. PRs welcome. |
 | `references/forearm-stubs.md` | Stubs for 21, 22, 23. PRs welcome. |
 | `references/femur-shaft-distal-stubs.md` | Stubs for 32, 33, 34. PRs welcome. |
-| `references/tibia-stubs.md` | Stubs for 41, 42, 43, 44. PRs welcome. |
+| `references/tibial-plateau-41.md` | **Deep reference.** Proximal tibia 41-A / 41-B / 41-C: the B-vs-C continuity test, groups, subgroups, 2018 qualifications and universal modifiers, worked examples, confidence ceilings. Run with the Schatzker / column companion in skill 05. |
+| `references/tibia-stubs.md` | Stubs for 42, 43, 44. PRs welcome. |
 | `references/spine-pelvis-stubs.md` | Stubs for spine, 61, 62. PRs welcome. |
 
 Read the matching reference before classifying.

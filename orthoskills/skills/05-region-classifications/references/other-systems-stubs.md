@@ -51,32 +51,7 @@
 
 ## Schatzker (tibial plateau)
 
-**Originator:** Joseph Schatzker, 1979.
-**Structure:** Six types (I–VI):
-
-- **I:** Lateral split (no depression) — typical in young patients with good bone
-- **II:** Lateral split + depression — typical in older bone
-- **III:** Lateral pure depression
-- **IV:** Medial plateau (split, depression, or both) — high-energy
-- **V:** Bicondylar — both plateaus
-- **VI:** Plateau + metadiaphyseal dissociation — the highest-energy pattern
-
-**What it predicts:** treatment approach, implant strategy (medial plate vs lateral plate vs both vs ex-fix), and associated soft-tissue injury risk.
-
-**Clinical relevance:**
-- Schatzker IV: always look for popliteal vessel and peroneal nerve injury — it's effectively a knee dislocation equivalent.
-- Schatzker V/VI: high rate of compartment syndrome.
-- The posteromedial fragment (a separate concept from the six-type system) is often invisible on AP and dictates approach.
-
-**Pitfalls:**
-- Posteromedial fragment is the classical missed finding — always read the lateral and get CT.
-- Schatzker doesn't capture posterolateral fragments well — Luo's three-column concept complements it.
-
-**Expand-me checklist:**
-- [ ] Worked examples for each type
-- [ ] Luo three-column concept with surgical approach implications
-- [ ] Compartment syndrome and neurovascular reminders
-- [ ] AO/OTA 41 cross-link
+✅ **Expanded.** See `schatzker-luo.md` for the original Schatzker types, the 2018 CT-based revision, Luo's three-column concept and its updates, Moore's fracture-dislocation types, the ten-segment map, consistency rules with AO/OTA 41, reliability data and confidence ceilings.
 
 ---
 

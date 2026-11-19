@@ -30,7 +30,7 @@ From skill 03's `region_specific_systems` list, look up each in the reference fi
 | Proximal femur (neck) | **Garden + Pauwels** | `references/garden-pauwels.md` (canonical deep) |
 | Proximal humerus | Neer | `references/other-systems-stubs.md` |
 | Radial head | Mason | `references/other-systems-stubs.md` |
-| Tibial plateau | Schatzker, Luo three-column | `references/other-systems-stubs.md` |
+| Tibial plateau | Schatzker (+ 2018 revision), Luo three-column (+ updates), Moore (fracture-dislocation flag) | `references/schatzker-luo.md` (deep) |
 | Ankle | Lauge-Hansen, Weber | `references/other-systems-stubs.md` |
 | Talar neck | Hawkins | `references/other-systems-stubs.md` |
 | Calcaneus | Sanders | `references/other-systems-stubs.md` |
